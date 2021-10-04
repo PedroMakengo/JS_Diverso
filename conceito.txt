@@ -1,0 +1,1 @@
+JavaScript é uma linguagem de programação interpretada.
