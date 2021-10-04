@@ -1,27 +1,19 @@
-// var idade = 28;
-// var simbol = Symbol();
+// Declare uma variável contendo uma string
+var nome = "Pedro";
 
-// console.log(typeof simbol);
+// Declare uma variável contendo um número dentro de uma string
+var number = "1999";
 
-// var nome = "Pedro";
-// var sobrenome = "Makengo";
-// var nomeCompleto = nome + " " + sobrenome;
+// Declare uma variável com a sua idade
+var idade = 22;
 
-// console.log(nomeCompleto);
+// Declare duas variáveis, uma com seu nome
+// e outra com o seu sobrenome e some as mesmas
+var sobrenome = "Makengo";
 
-// var gols = 1000;
-// var frase = "Romário fez " + gols + " gols";
-// console.log(typeof frase);
+var nomeCompleto = `${nome} ${sobrenome}`;
 
-var ano = "2018";
-var mes = 8;
+// Coloque a seguinte frase em uma variável: It's time
+var frase = `It's time`;
 
-console.log(ano + mes);
-
-var melhor = "teste";
-var frase1 = 'Esse é o "melhor " jogo';
-console.log(frase1);
-
-var gols = 1000;
-var frase2 = `Romário faz ${gols} gols`;
-console.log(frase2);
+console.log(typeof nome);
