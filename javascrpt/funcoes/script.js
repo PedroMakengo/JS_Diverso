@@ -1,81 +1,53 @@
-function areaQuadrado(lado) {
-  return lado;
-}
+// Crie uma função para verificar se um valor é Truthy
 
-console.log(areaQuadrado(2));
-
-function pi() {
-  return 3.14;
-}
-
-var total = 5 * pi();
-console.log(total);
-
-function imc(peso, altura) {
-  var imc = peso / (altura * altura);
-  return imc;
-}
-
-console.log(imc(80, 1.8));
-
-function corFavorita(cor) {
-  if (cor === "azul") {
-    return "Eu gosto do céu";
-  } else if (cor === "verde") {
-    return "Eu gosto de mato";
+function verificarValor(value) {
+  if (!!value) {
+    return `É Truthy`;
   } else {
-    return "Eu não gosto de cores";
+    return "Não é truthy";
   }
 }
 
-function mostraConsole() {
-  console.log("Oi");
+console.log(verificarValor(1));
+
+// Crie uma função matemática que retorne o perímetro de um quadrado
+// lembrando: perímetro é a soma dos quatro lados do quadrado
+
+function perimetro(l1, l2, l3, l4) {
+  var somaPerimetro = l1 + l2 + l3 + l4;
+  return somaPerimetro;
 }
 
-addEventListener("click", mostraConsole);
+console.log(perimetro(3, 3, 1, 8));
 
-function imc2(peso, altura) {
-  const imc = peso / altura ** 2;
-  console.log(imc);
+// Crie uma função que retorne o seu nome completo
+// ela deve possuir os parâmetros: nome e sobrenome
+
+function nomeCompleto(nome, sobrenome) {
+  return `${nome} ${sobrenome}`;
 }
 
-imc2(20, 1.8);
-console.log(imc2(1000, 1.8));
+console.log(nomeCompleto("Pedro", "Makengo"));
+console.log(nomeCompleto("Pedro", "Miguel"));
 
-function terceiraIdade(idade) {
-  if (typeof idade !== "number") {
-    return "Por favor preencha um número";
-  } else if (idade >= 60) {
-    return true;
+// Crie uma função que verifica se um número é par
+
+function numeroPar(numero) {
+  if (numero % 2 == 0) {
+    return `O número ${numero} é par`;
   } else {
-    return false;
+    return `O número ${numero} é impar`;
   }
 }
 
-terceiraIdade(60);
+console.log(numeroPar(30));
 
-var totalPaises = 193;
+// Crie uma função que retorne o tipo de
+// dados do argumento passado nela (typeof)
 
-function faltaVisitar(paisesVisitados) {
-  return `Falta visitar ${totalPaises - paisesVisitados} países`;
+function tipoDados(tipo) {
+  return typeof tipo;
 }
+console.log(tipoDados("Cabelo"));
 
-console.log(faltaVisitar(20));
-console.log(totalPaises);
-
-var profissao = "Designer";
-
-function dados() {
-  var nome = "Pedro";
-  var idade = 22;
-
-  function outroDados() {
-    var endereco = "Rio de Janeiro";
-    var idade = 28;
-
-    return `${nome}, ${idade}, ${endereco}, ${profissao}`;
-  }
-  return outroDados();
-}
-
-console.log(dados());
+//
