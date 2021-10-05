@@ -48,7 +48,7 @@ console.log(tipoDados("Cabelo"));
 // addEventListener é uma função nativa do JavaScript
 // o primeiro parâmetro é o evento que ocorre e o segundo o callback
 // utilize essa função para mostrar no console o seu nome completo
-// quando o evento scrool ocorrer
+// quando o evento scrool ocorre r
 
 addEventListener("scroll", function () {
   console.log("Pedro Makengo");
