@@ -11,5 +11,5 @@ console.log(scroll);
 var possuiCarro = true;
 var possuiCasa = true;
 
-darCredito = possuiCarro === true && possuiCasa === true;
+darCredito = possuiCarro && possuiCasa;
 console.log(darCredito);
