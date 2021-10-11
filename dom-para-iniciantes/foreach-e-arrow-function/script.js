@@ -16,3 +16,5 @@ let i = 0;
 imgs.forEach(() => {
   console.log(i++);
 });
+
+imgs.forEach(() => console.log(i++));
