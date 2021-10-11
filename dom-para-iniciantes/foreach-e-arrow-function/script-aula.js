@@ -1,22 +1,10 @@
-const animais = document.getElementById("animais");
-console.log(animais);
+let i = 0;
+const imgs = document.querySelectorAll("img");
 
-const gridSection = document.getElementsByClassName("grid-section");
+imgs.forEach(function (item, index) {
+  console.log(item);
+});
 
-console.log(gridSection[1]);
+imgs.forEach(() => console.log(i++));
 
-const primeiraLi = document.querySelector("li");
-console.log(primeiraLi);
-
-const primeiraUl = document.querySelector("ul");
-console.log(primeiraUl);
-
-const linksInternos = document.querySelector('[href^="#"]');
-console.log(linksInternos.href);
-
-const animaisImg = document.querySelectorAll(".animais img");
-
-console.log(animaisImg);
-
-const gridSectionHTML = document.getElementsByClassName("grid-section");
-const gridSectionNode = document.querySelectorAll(".grid-section");
+imgs.forEach((item) => console.log(item));
