@@ -19,21 +19,24 @@ linkInternos.forEach((link) => {
 // Selecione todos os elemntos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
 
-// const el = document.querySelector("*");
-// function handleClicado(event) {
-//   console.log(event.target);
-// }
-// el.addEventListener("click", handleClicado);
+const todosElementos = document.querySelectorAll("body *");
 
+function handleElemento(event) {
+  event.currentTarget.remove();
+}
+
+todosElementos.forEach((elemento) => {
+  elemento.addEventListener("click", handleElemento);
+});
 // Utilizando o código anterior, ao invés de mostrar no console
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
 
 // Se o usuário clicar na tecla t
 
-// function handleClicado(event) {
-//   event.target.remove();
-//   if (event.key === "t") {
-//     document.body.style.fontSize = "30px";
-//   }
-// }
-// el.addEventListener("click", handleClicado);
+function handleClicado(event) {
+  if (event.key === "t") {
+    document.body.style.fontSize = "30px";
+  }
+}
+
+window.addEventListener("keydown", handleClicado);
