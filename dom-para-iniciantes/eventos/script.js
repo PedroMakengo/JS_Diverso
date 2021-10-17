@@ -35,7 +35,7 @@ todosElementos.forEach((elemento) => {
 
 function handleClicado(event) {
   if (event.key === "t") {
-    document.body.style.fontSize = "30px";
+    document.documentElement.classList.toggle("textomaior");
   }
 }
 
