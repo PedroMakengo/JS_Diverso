@@ -10,6 +10,14 @@ dl {
   padding: 0px;
 }
 
+.azul {
+  background: teal;
+}
+
+.vermelho {
+  background: #e54;
+}
+
 img {
   display: block;
   max-width: 100%;
