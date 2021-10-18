@@ -32,7 +32,6 @@ todosElementos.forEach((elemento) => {
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
 
 // Se o usuário clicar na tecla t
-
 function handleClicado(event) {
   if (event.key === "t") {
     document.documentElement.classList.toggle("textomaior");
