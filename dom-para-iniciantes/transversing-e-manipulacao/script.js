@@ -1,41 +1,18 @@
-// Quando o usuário clicar nos links internos do site,
-// adicione a classe ativo ao item clicado e remova dos
-// demais itens caso eles possuam a mesma. Previna
-// o comportamento padrão desses link
-const linkInternos = document.querySelectorAll("a[href^='#']");
+// Duplique o menu e adicione em copy
+const menu = document.querySelector(".menu");
+const cloneMenu = menu.cloneNode(true);
+const copy = document.querySelector(".copy");
 
-function handlLink(event) {
-  event.preventDefault();
-  linkInternos.forEach((link) => {
-    link.classList.remove("ativo");
-  });
-  this.classList.add("ativo");
-}
+copy.appendChild(cloneMenu);
 
-linkInternos.forEach((link) => {
-  link.addEventListener("click", handlLink);
-});
+// Selecione o primeiro dt da dl de Faq
+const faq = document.querySelector(".faq");
+const primeiroDt = faq.querySelector("dt");
 
-// Selecione todos os elemntos do site começando a partir do body,
-// ao clique mostre exatamente quais elementos estão sendo clicados
+// Selecione o DD referente ao primeiro DT
+const proximoDD = primeiroDt.nextElementSibling;
 
-const todosElementos = document.querySelectorAll("body *");
+// Substitua o conteúdo html de .faq pelo de animais
+const animais = document.querySelector(".animais");
 
-function handleElemento(event) {
-  event.currentTarget.remove();
-}
-
-todosElementos.forEach((elemento) => {
-  elemento.addEventListener("click", handleElemento);
-});
-// Utilizando o código anterior, ao invés de mostrar no console
-// remova o elemento que está sendo clicado, o método remove() remove um elemento
-
-// Se o usuário clicar na tecla t
-function handleClicado(event) {
-  if (event.key === "t") {
-    document.documentElement.classList.toggle("textomaior");
-  }
-}
-
-window.addEventListener("keydown", handleClicado);
+faq.innerHTML = animais.innerHTML;
