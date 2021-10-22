@@ -1,0 +1,13 @@
+// const carro = {
+//   marca: "Marca",
+//   preco: 0,
+// };
+
+// Funcção constructor começa sempre com letra maiuscula PascalCase
+function Carro(marcaAtribuida, precoAtribuido) {
+  this.marca = marcaAtribuida;
+  this.preco = precoAtribuido;
+}
+
+const honda = new Carro("Honda", 3000);
+const fiat = new Carro("Fiat", 4000);
