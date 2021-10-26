@@ -1,87 +1,83 @@
-// const comida = "Pizza";
-// const agua = new String("Agua");
+// Utilizando o foreach na array abaixo,
+// some os valores de Taxa e os valores de Recebimento
 
-// console.log(agua.length);
+const transacoes = [
+  {
+    descricao: "Taxa do Pão",
+    valor: "R$ 39",
+  },
+  {
+    descricao: "Taxa do Mercado",
+    valor: "R$ 129",
+  },
+  {
+    descricao: "Recebimento de Cliente",
+    valor: "R$ 99",
+  },
+  {
+    descricao: "Taxa do Banco",
+    valor: "R$ 129",
+  },
+  {
+    descricao: "Recebimento de Cliente",
+    valor: "R$ 49",
+  },
+];
 
-// const frase = "A melhor comida";
+let taxaTotal = 0;
+let recebimentoTotal = 0;
 
-// console.log(frase[frase.length]);
-// console.log(frase.charAt(0));
+transacoes.forEach((transacao) => {
+  const numeroLimpo = Number(transacao.valor.replace("R$ ", ""));
+  if (transacao.descricao.slice(0, 4) === "Taxa") {
+    taxaTotal += numeroLimpo;
+  } else if (transacao.descricao.slice(0, 4) === "Rece") {
+    recebimentoTotal += numeroLimpo;
+  }
+});
 
-// const frase = "A minha linguagem é ";
-// const linguagem = "JavaScript";
+console.log(taxaTotal);
+console.log(recebimentoTotal);
 
-// const fraseFinal = frase.concat(linguagem, "!!");
+// Retorne uma array com a lista abaixo
+const transportes = "Carro;Avião;Trem;Ônibus;Bicicleta";
+const arrayTransportes = transportes.split(";");
 
-// const fruta = "Banana";
-// const listaFrutas = "Melancia, Banana, Laranja";
+console.log(arrayTransportes);
 
-// console.log(listaFrutas.includes(fruta, 1));
+// Substitua todos os spans por a´s
+let html = `<ul>
+                  <li><span>Sobre</span></li>
+                  <li><span>Produtos</span></li>
+                  <li><span>Contato</span></li>
+              </ul>`;
 
-// console.log(fruta.startsWith("Ba")); // Começa com...
-// console.log(fruta.endsWith("na")); // Termina com...
+html = html.split("span").join("a");
+console.log(html);
 
-// Transação
-// const transacao1 = "Depósito de cliente";
-// const transacao2 = "Depósito de fornecedor";
-// const transacao3 = "Taxa de camisas";
+// Retorne o último caracter da frase
+const frase = "Melhor do ano!";
+console.log(frase[frase.length - 1]);
 
-// console.log(transacao1.slice(0, 3));
+// Retorne o total de taxas
+const transacoes2 = [
+  "Taxa do Banco",
+  "   TAXA DO PÃO   ",
+  "  taxa do mercado",
+  "depósito Bancário",
+  "TARIFA especial",
+];
 
-// const lingugagem = "Javascript";
+let taxasTotal = 0;
 
-// lingugagem.substring(-5); // substring não retorna valores negativos
+transacoes2.forEach((item) => {
+  item = item.toLowerCase();
+  item = item.trim();
+  item = item.slice(0, 4);
 
-// console.log(fruta.indexOf("B")); // Retorna o index de uma string
+  if (item === "taxa") {
+    taxaTotal++;
+  }
+});
 
-// const listaPrecos = ["R$ 99", "R$ 199", "R$ 12000"];
-// listaPrecos.forEach((preco) => {
-//   // console.log(preco.padStart(10, "0")); // Acrescenta caracteres dentro da
-//   // minha string de acordo aos meus parametros
-//   console.log(preco.padEnd(10, "0"));
-// });
-
-// const fruta2 = "Ta";
-// console.log(fruta2.repeat(5));
-
-// fruta.repeat(20);
-
-let listaItens = "Camisas Bonés Calças Bermudas Vestidos Saias";
-
-listaItens = listaItens.replace(/[ ]+/g, ", ");
-console.log(listaItens);
-
-let preco = "R$ 1200,43";
-
-preco = preco.replace(",", ".");
-console.log(preco);
-
-const arrayList = listaItens.split(", "); // retorna um array com as posições
-// de acordo ao parametro especificado
-console.log(arrayList);
-
-const htmlText = "<div>O melhor item</div><div>A melhor lista</div>";
-const htmlArray = htmlText.split("div");
-const novoHtml = htmlArray.join("section");
-
-console.log(htmlText);
-console.log(htmlArray);
-console.log(novoHtml);
-
-const frutaArray = ["Banana", "Melancia", "Laranja"];
-
-// toLowerCase() letra maiuscula
-// toUpperCase() letra minuscula
-
-const sexo1 = "Feminino";
-const sexo2 = "feminino";
-const sexo3 = "FEMININO";
-
-console.log(sexo1.toLowerCase() === "FEMININO");
-
-// Remover espaço
-// trim(), trimStart, trimEnd
-const valor = "  R$ 23   ";
-valor.trim();
-
-console.log(valor);
+console.log(taxasTotal);
