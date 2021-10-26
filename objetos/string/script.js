@@ -27,3 +27,16 @@ const transacao2 = "Depósito de fornecedor";
 const transacao3 = "Taxa de camisas";
 
 console.log(transacao1.slice(0, 3));
+
+const lingugagem = "Javascript";
+
+lingugagem.substring(-5); // substring não retorna valores negativos
+
+console.log(fruta.indexOf("B")); // Retorna o index de uma string
+
+const listaPrecos = ["R$ 99", "R$ 199", "R$ 12000"];
+listaPrecos.forEach((preco) => {
+  // console.log(preco.padStart(10, "0")); // Acrescenta caracteres dentro da
+  // minha string de acordo aos meus parametros
+  console.log(preco.padEnd(10, "0"));
+});
