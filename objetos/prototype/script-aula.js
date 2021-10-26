@@ -18,3 +18,17 @@ const andre = new Pessoa("André", 28);
 
 console.log(Pessoa.prototype);
 console.log(andre.prototype);
+
+const lista = document.querySelectorAll("li");
+
+// Transformar em um array
+const listaArray1 = Array.prototype.slice.call(lista);
+const listaArray2 = Array.from(lista);
+
+const Carro = {
+  marca: "Ford",
+  preco: 2000,
+  andar() {
+    return "Oi";
+  },
+};
