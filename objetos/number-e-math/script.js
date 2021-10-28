@@ -1,29 +1,31 @@
-const ano = 2018;
-const preco = 2.99;
+// Retorne um número aleatório
+// entre 1050 e 2000
+console.log(Math.floor(Math.random() * (2000 - 1050 + 1)) + 1050);
 
-// Métodos
-console.log(Number.isNaN(5)); // Verificar se o valor é true ou false
-console.log(Number.isInteger(20)); // Verificar se o valor é um número inteiro
+// Retorne o maior número da lista abaixo
+const numeros = "4, 5, 20, 8, 9";
 
-// parseFloat
-console.log(Number.parseFloat("99.50"));
-console.log(Number.parseInt("100.50"));
+const arrayNumeros = numeros.split(", ");
 
-console.log(preco.toFixed());
+console.log(Math.max(...arrayNumeros));
 
-const carro = 1000.455;
+// Crie uma função para limpar os preços e retornar os números com os centavos arrendodados
+// depois retorne a soma total
 
-console.log(carro.toFixed(2));
+const listaPrecos = ["R$ 59,99", "R$ 100,222", "R$ 230", "r$ 200"];
 
-let valor = 48.49;
-let valor1 = valor.toLocaleString("pt-BR", {
-  style: "currency",
-  currency: "BRL",
+function limparPreco(preco) {
+  preco = +preco.toUpperCase().replace("R$", "").trim().replace(",", ".");
+  preco = +preco.toFixed(2);
+  return preco;
+}
+
+let soma = 0;
+listaPrecos.forEach((preco) => {
+  soma += limparPreco(preco);
 });
-let valor2 = valor.toLocaleString("en-US", {
-  style: "currency",
-  currency: "BRL",
-});
 
-console.log(valor1);
-console.log(valor2);
+// console.log(soma);
+console.log(
+  soma.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+);
