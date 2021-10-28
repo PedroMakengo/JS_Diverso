@@ -14,3 +14,16 @@ console.log(preco.toFixed());
 const carro = 1000.455;
 
 console.log(carro.toFixed(2));
+
+let valor = 48.49;
+let valor1 = valor.toLocaleString("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+});
+let valor2 = valor.toLocaleString("en-US", {
+  style: "currency",
+  currency: "BRL",
+});
+
+console.log(valor1);
+console.log(valor2);
