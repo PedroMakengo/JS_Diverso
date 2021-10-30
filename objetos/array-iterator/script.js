@@ -1,41 +1,56 @@
-const comidas = ["Pizza", "Frango", "Carne", "Macarrão"];
-// Remova o primeiro valor de comidas e coloque em uma variável
-const valorPrimeiroRemovido = comidas.shift();
-console.log(valorPrimeiroRemovido);
-// Remova o último valor de comidas e coloque em uma variável
-const valorUltimoRemovido = comidas.pop();
-console.log(valorUltimoRemovido);
-// Adicione "Arroz " ao final do array
-comidas.push("Arroz");
-// Adicione no início
-comidas.unshift("Peixe", "Batata");
+// // const carros = ["Ford", "Fiat", "Honda"];
 
-// Arrume os estudantes em ordem alfabética
-const estudantes = ["Marcio", "Brenda", "Joana", "Kleber", "Julia"];
-// Inverta a ordem dos estudantes
-estudantes.reverse();
-// Verifique se Joana faz parte dos estudantes
-estudantes.indexOf("Joana");
-// Verifique se Juliana faz parte do estudantes
-estudantes.includes("Juliana");
+// // carros.forEach(function (item, index, array) {
+// //   console.log(item, index, array);
+// // });
 
-//
-let html = `<section>
-              <div>Sobre</div>
-              <div>Produtos</div>
-              <div>Contato</div>
-            </section>`;
+// const li = document.querySelectorAll("li");
 
-html = html.split("section").join("ul").split("div").join("li");
-console.log(html);
+// li.forEach((i) => i.classList.add("ativa"));
 
-const carros = ["Ford", "Fiat", "VM", "Honda"];
-// Remove o último carro, mais antes de remover
-// salve o array original na outra variável
+// li.forEach(function (item) {
+//   item.classList.add("ativa");
+// });
 
-const carrosCopia = carros.slice();
+// const carros = ["Ford", "Fiat", "Honda"];
 
-carros.pop();
+// carros.map((item, index, array) => {
+//   return item.toUpperCase();
+// });
 
-console.log(carrosCopia);
-console.log(carros);
+// const aulas = [
+//   {
+//     nome: "HMTL 1",
+//     min: 15,
+//   },
+//   {
+//     nome: "HTML 2",
+//     min: 10,
+//   },
+//   {
+//     nome: "CSS 1",
+//     min: 20,
+//   },
+//   {
+//     nome: "JS 1",
+//     min: 25,
+//   },
+// ];
+
+// const tempoAulas = aulas.map((aula) => aula.min);
+
+// console.log(tempoAulas);
+
+const aulas = [10, 25, 30];
+
+const reduceAulas = aulas.reduce((acumulador, item) => {
+  return acumulador + item;
+}, 0);
+
+const numeros = [10, 25, 30, 3, 54, 33, 22];
+
+const maiorNumero = numeros.reduce((anterior, atual) => {
+  anterior > atual ? anterior : atual;
+});
+
+console.log(maiorNumero);
