@@ -6,10 +6,9 @@ console.log(valorPrimeiroRemovido);
 const valorUltimoRemovido = comidas.pop();
 console.log(valorUltimoRemovido);
 // Adicione "Arroz " ao final do array
-
-comidas[comidas.length - 1] = "Arroz";
-
-console.log(comidas);
+comidas.push("Arroz");
+// Adicione no início
+comidas.unshift("Peixe", "Batata");
 
 // Arrume os estudantes em ordem alfabética
 const estudantes = ["Marcio", "Brenda", "Joana", "Kleber", "Julia"];
@@ -27,12 +26,16 @@ let html = `<section>
               <div>Contato</div>
             </section>`;
 
-html = html.split("section");
-html = html.join("ul");
-html = html.split("div");
-html = html.join("li");
+html = html.split("section").join("ul").split("div").join("li");
 console.log(html);
 
 const carros = ["Ford", "Fiat", "VM", "Honda"];
 // Remove o último carro, mais antes de remover
 // salve o array original na outra variável
+
+const carrosCopia = carros.slice();
+
+carros.pop();
+
+console.log(carrosCopia);
+console.log(carros);
