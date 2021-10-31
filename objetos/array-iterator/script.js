@@ -79,20 +79,62 @@
 //   return acumulador;
 // }, {});
 
-const frutas = ["Banana", "Pêra", "Uvas"];
+// const frutas = ["Banana", "Manga", "Pêra", "Uvas"];
 
-const temUva = frutas.some((item) => {
-  return item === "Uva";
+// const temUva = frutas.some((item) => {
+//   return item === "Uva";
+// });
+
+// const indexUva = frutas.findIndex((item) => {
+//   return item === "Uvas";
+// });
+
+// console.log(indexUva);
+
+// const every = frutas.every((item) => {
+//   return item === "Uva";
+// });
+
+// console.log(every);
+
+// const numeros = [6, 43, 22, 88, 101, 29];
+
+// const maiorQue3 = numeros.every((n) => n > 7);
+
+// console.log(maiorQue3);
+
+// const frutas = ["Banana", undefined, null, "", "Uva", 0, "Maçã"];
+
+// const arrayFrutas = frutas.filter((item) => {
+//   console.log(item);
+//   return item;
+// });
+
+// console.log(arrayFrutas);
+
+const aulas = [
+  {
+    nome: "HMTL 1",
+    min: 15,
+  },
+  {
+    nome: "HTML 2",
+    min: 10,
+  },
+  {
+    nome: "CSS 1",
+    min: 20,
+  },
+  {
+    nome: "JS 1",
+    min: 25,
+  },
+];
+
+const maiores15 = aulas.filter((aula) => {
+  console.log(aula.min);
+
+  return aula.min >= 15;
 });
 
-const every = frutas.every((item) => {
-  return item === "Uva";
-});
-
-console.log(every);
-
-const numeros = [6, 43, 22, 88, 101, 29];
-
-const maiorQue3 = numeros.every((n) => n > 7);
-
-console.log(maiorQue3);
+console.log(maiores15);
