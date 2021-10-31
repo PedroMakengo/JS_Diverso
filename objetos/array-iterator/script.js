@@ -41,16 +41,58 @@
 
 // console.log(tempoAulas);
 
-const aulas = [10, 25, 30];
+// const aulas = [10, 25, 30];
 
-const reduceAulas = aulas.reduce((acumulador, item) => {
-  return acumulador + item;
-}, 0);
+// const reduceAulas = aulas.reduce((acumulador, item) => {
+//   return acumulador + item;
+// }, 0);
 
-const numeros = [10, 25, 30, 3, 54, 33, 22];
+// const numeros = [10, 25, 30, 3, 54, 33, 22];
 
-const maiorNumero = numeros.reduce((anterior, atual) => {
-  anterior > atual ? anterior : atual;
+// const maiorNumero = numeros.reduce((anterior, atual) => {
+//   return anterior > atual ? anterior : atual;
+// });
+
+// console.log(maiorNumero);
+
+// const aulas = [
+//   {
+//     nome: "HMTL 1",
+//     min: 15,
+//   },
+//   {
+//     nome: "HTML 2",
+//     min: 10,
+//   },
+//   {
+//     nome: "CSS 1",
+//     min: 20,
+//   },
+//   {
+//     nome: "JS 1",
+//     min: 25,
+//   },
+// ];
+
+// const listaAulas = aulas.reduce((acumulador, atual, index) => {
+//   acumulador[index] = atual.nome;
+//   return acumulador;
+// }, {});
+
+const frutas = ["Banana", "Pêra", "Uvas"];
+
+const temUva = frutas.some((item) => {
+  return item === "Uva";
 });
 
-console.log(maiorNumero);
+const every = frutas.every((item) => {
+  return item === "Uva";
+});
+
+console.log(every);
+
+const numeros = [6, 43, 22, 88, 101, 29];
+
+const maiorQue3 = numeros.every((n) => n > 7);
+
+console.log(maiorQue3);
