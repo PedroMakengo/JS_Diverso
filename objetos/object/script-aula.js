@@ -104,4 +104,4 @@ console.log(somar.toString());
 
 console.log(frutas.toString());
 
-console.log(Object.prototype.toString().matchAll(frutas));
+console.log(Object.prototype.toString().call(frutas));
