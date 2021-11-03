@@ -11,7 +11,8 @@ function initTabNav() {
         section.classList.remove("ativo");
       });
       // Adicionando a class ativo na section de acordo ao index da imagem
-      tabContent[index].classList.add("ativo");
+      const direcao = tabContent[index].dataset.anime;
+      tabContent[index].classList.add("ativo", direcao);
     }
 
     // Percorrendo todas imagens como tab e usar o index destas imagens
