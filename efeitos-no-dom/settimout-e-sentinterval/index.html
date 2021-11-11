@@ -12,10 +12,17 @@
     <script>
       document.documentElement.className += " js";
     </script>
-    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body.active {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
-    <button>Clique</button>
+    <button class="iniciar">Iniciar</button>
+    <button class="pausar">Pausar</button>
+    <span class="tempo"></span>
+
     <script type="module" src="js/script.js"></script>
   </body>
 </html>

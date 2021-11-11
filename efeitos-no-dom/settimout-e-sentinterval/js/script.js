@@ -1,39 +1,35 @@
-// function espera(texto) {
-//   console.log(texto);
+// Mude a cor da tela para azul e depois para vermelho a cada 2s
+
+// function mudarClasse() {
+//   document.body.classList.toggle("active");
 // }
+// setInterval(mudarClasse, 2000);
 
-// setTimeout(() => {
-//   console.log("Após 0s?");
-// }, 2000);
+// Crie um cronometro utilizando o setInterval. Deve ser possível
+// iniciar, pausar e resetar (duplo clique no pausar)
 
-// for (let i = 0; i < 20; i++) {
-//   setTimeout(() => {
-//     console.log(i);
-//   }, 1000 * i);
-// }
+const iniciar = document.querySelector(".iniciar");
+const pausar = document.querySelector(".pausar");
+const tempo = document.querySelector(".tempo");
 
-// const btn = document.querySelector("button");
-
-// btn.addEventListener("click", handleClick);
-
-// function handleClick() {
-//   setTimeout(() => {
-//     console.log(this);
-//     this.classList.add("active");
-//   }, 1000);
-// }
-
-function loop(texto) {
-  console.log(texto);
-}
-
-setInterval(loop, 1000, "Passou 1s");
+iniciar.addEventListener("click", iniciarTempo);
+pausar.addEventListener("click", pausarTempo);
+pausar.addEventListener("dblclick", resetarTempo);
 
 let i = 0;
+let timer;
 
-const meuLoop = setInterval(() => {
-  console.log(i++);
-  if (i > 20) {
-    clearInterval(meuLoop);
-  }
-}, 1000);
+function iniciarTempo() {
+  timer = setInterval(() => {
+    tempo.innerText = i++;
+  }, 100);
+  iniciar.setAttribute("disabled", "");
+}
+function pausarTempo() {
+  clearInterval(timer);
+  iniciar.removeAttribute("disabled");
+}
+function resetarTempo() {
+  tempo.innerText = 0;
+  i = 0;
+}
