@@ -1,62 +1,54 @@
-// const doc = fetch("./doc.txt");
+// Utilizando a API
+// crie um formulário onde o usuário pode digitar o cep
+// e o endereço completo é retornado ao clicar em buscar
 
-// doc
-//   .then((resolucao) => {
-//     return resolucao.text();
-//   })
-//   .then((body) => {
-//     const conteudo = document.querySelector(".conteudo");
-//     conteudo.innerText = body;
-//   });
+const inputCep = document.querySelector("#cep");
+const btnCep = document.querySelector("#btnCep");
+const resultadoCep = document.querySelector(".resultadoCep");
 
-// const cep = fetch("./style.css");
+btnCep.addEventListener("click", handleClick);
+function handleClick(event) {
+  event.preventDefault();
 
-// cep
-//   .then((data) => data.text())
-//   .then((body) => {
-//     const conteudo = document.querySelector(".conteudo");
-//     const style = document.createElement("style");
-//     style.innerHTML = body;
-//     console.log(style);
-//     conteudo.appendChild(style);
-//   });
+  const cep = inputCep.value;
+  buscaCep(cep);
+}
 
-// const sobre = fetch("./sobre.html");
+function buscaCep(cep) {
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then((response) => response.text())
+    .then((body) => {
+      resultadoCep.innerText = body;
+    });
+}
 
-// const div = document.createElement("div");
+// Utilizando a API https://blockchain.info/ticker
+// retorne no DOM o valor de compra da bitcoin and reais
+// atualize este valor a cada 30s
+const btcDisplay = document.querySelector(".btc");
+function fetchBtc() {
+  fetch("https://blockchain.info/ticker")
+    .then((response) => response.json())
+    .then((btcJson) => {
+      btcDisplay.innerText = ("R$ " + btcJson.BRL.buy).replace(".", ",");
+    });
+}
+setInterval(fetchBtc, 3000);
 
-// sobre
-//   .then((response) => response.text())
-//   .then((response) => {
-//     div.innerHTML = response;
-//     const titulo = div.querySelector("h1");
-//     document.querySelector("h1").innerText = titulo.innerText;
-//     console.log(div);
-//   })
-//   .catch(() => {
-//     console.log("Erro...");
-//   });
+// Utilizando a API https://api.chucknorris.io/jokes/random
+// retorne uma piada randomica do chucknorris, toda vez que
+// clicar em próxima
 
-// const imagem = fetch("./imagem.jpg");
+const btnProxima = document.querySelector(".proxima");
+const paragrafoPiada = document.querySelector(".piada");
 
-// imagem
-//   .then((response) => response.blob())
-//   .then((body) => {
-//     const blobUrl = URL.createObjectURL(body);
-//     const imagemDom = document.querySelector("img");
-//     imagemDom.src = blobUrl;
-//   });
+function puxarPiada() {
+  fetch("https://api.chucknorris.io/jokes/random")
+    .then((response) => response.json())
+    .then((piada) => {
+      paragrafoPiada.innerText = piada.value;
+    });
+}
 
-// const imagem = fetch("https://viacep.com.br/ws/01001000/json/");
-
-// imagem
-//   .then((response) => response.text())
-//   .then((body) => {
-//     console.log(body);
-//   });
-
-const imagem = fetch("https://viacep.com.br/ws/01001000/json/");
-
-imagem.then((response) => {
-  response.headers.forEach(console.log);
-});
+puxarPiada();
+btnProxima.addEventListener("click", puxarPiada);
