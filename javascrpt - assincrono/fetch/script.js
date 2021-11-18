@@ -21,18 +21,36 @@
 //     conteudo.appendChild(style);
 //   });
 
-const sobre = fetch("./sobre.html");
+// const sobre = fetch("./sobre.html");
 
-const div = document.createElement("div");
+// const div = document.createElement("div");
 
-sobre
+// sobre
+//   .then((response) => response.text())
+//   .then((response) => {
+//     div.innerHTML = response;
+//     const titulo = div.querySelector("h1");
+//     document.querySelector("h1").innerText = titulo.innerText;
+//     console.log(div);
+//   })
+//   .catch(() => {
+//     console.log("Erro...");
+//   });
+
+// const imagem = fetch("./imagem.jpg");
+
+// imagem
+//   .then((response) => response.blob())
+//   .then((body) => {
+//     const blobUrl = URL.createObjectURL(body);
+//     const imagemDom = document.querySelector("img");
+//     imagemDom.src = blobUrl;
+//   });
+
+const imagem = fetch("https://viacep.com.br/ws/01001000/json/");
+
+imagem
   .then((response) => response.text())
-  .then((response) => {
-    div.innerHTML = response;
-    const titulo = div.querySelector("h1");
-    document.querySelector("h1").innerText = titulo.innerText;
-    console.log(div);
-  })
-  .catch(() => {
-    console.log("Erro...");
+  .then((body) => {
+    console.log(body);
   });
