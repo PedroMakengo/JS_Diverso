@@ -47,10 +47,16 @@
 //     imagemDom.src = blobUrl;
 //   });
 
+// const imagem = fetch("https://viacep.com.br/ws/01001000/json/");
+
+// imagem
+//   .then((response) => response.text())
+//   .then((body) => {
+//     console.log(body);
+//   });
+
 const imagem = fetch("https://viacep.com.br/ws/01001000/json/");
 
-imagem
-  .then((response) => response.text())
-  .then((body) => {
-    console.log(body);
-  });
+imagem.then((response) => {
+  response.headers.forEach(console.log);
+});
