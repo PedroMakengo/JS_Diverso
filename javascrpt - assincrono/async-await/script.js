@@ -23,3 +23,15 @@ async function puxarDados() {
 }
 
 puxarDados();
+
+async function asyncSemPromise() {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Depois de 1s");
+      resolve();
+    }, 1000);
+  });
+  console.log("Acabou");
+}
+
+asyncSemPromise();
