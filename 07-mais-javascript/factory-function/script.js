@@ -1,32 +1,55 @@
-// function createButton(text) {
-//   const numeroSecreto = "jsjfafafyfoafaf";
-//   function element() {
-//     const buttonElement = document.createElement("button");
-//     buttonElement.innerText = text;
+function $$(selectedElements) {
+  const elements = document.querySelectorAll(selectedElements);
 
-//     return buttonElement;
-//   }
+  function hide() {
+    elements.forEach((element) => {
+      element.style.display = "none";
+    });
+    return this;
+  }
 
-//   return Object.freeze({
-//     text,
-//     element,
-//     numeroSecreto,
-//   });
-// }
+  function show() {
+    elements.forEach((element) => {
+      element.style.display = "initial";
+    });
 
-// const btnComprar = createButton("Comprar");
-// const btnVender = createButton("Vender");
+    return this;
+  }
 
-function Pessoa(nome) {
-  if (!new.target) return new Pessoa(nome);
-  // if (!(this instanceof Pessoa)) return new Pessoa(nome);
-  this.nome = nome;
+  function on(onEvent, callback) {
+    elements.forEach((element) => {
+      element.addEventListener(onEvent, callback);
+    });
+    return this;
+  }
+
+  function addClass(className) {
+    elements.forEach((element) => {
+      element.classList.add(className);
+    });
+    return this;
+  }
+  function removeClass(className) {
+    elements.forEach((element) => {
+      element.classList.remove(className);
+    });
+    return this;
+  }
+  return {
+    elements,
+    hide,
+    show,
+    on,
+    addClass,
+    removeClass,
+  };
 }
 
-Pessoa.prototype.andar = function () {
-  return `${this.nome} andou`;
-};
+const btns = $$("button");
 
-const designer = Pessoa("Pedro Makengo");
+console.log(btns.hide().show());
 
-console.log(designer);
+function handleClick(event) {
+  console.log(event);
+}
+btns.on("click", handleClick);
