@@ -1,20 +1,32 @@
-// Remova o erro
-const priceNumber = (n) => +n.replace("R$", "").replace(",", ".");
-priceNumber("R$ 99,99");
+// function createButton(text) {
+//   const numeroSecreto = "jsjfafafyfoafaf";
+//   function element() {
+//     const buttonElement = document.createElement("button");
+//     buttonElement.innerText = text;
 
-// Crie uma IEFE e isole o escopo
-// de qualquer código JS.
+//     return buttonElement;
+//   }
 
-(() => {
-  const nome = "Pedro Makengo";
-  console.log(nome);
-})();
+//   return Object.freeze({
+//     text,
+//     element,
+//     numeroSecreto,
+//   });
+// }
 
-// Como podemos utilizar
-// a função abaixo
+// const btnComprar = createButton("Comprar");
+// const btnVender = createButton("Vender");
 
-const active = (callback) => callback();
+function Pessoa(nome) {
+  if (!new.target) return new Pessoa(nome);
+  // if (!(this instanceof Pessoa)) return new Pessoa(nome);
+  this.nome = nome;
+}
 
-active(function () {
-  console.log("Usando a função ativo");
-});
+Pessoa.prototype.andar = function () {
+  return `${this.nome} andou`;
+};
+
+const designer = Pessoa("Pedro Makengo");
+
+console.log(designer);
