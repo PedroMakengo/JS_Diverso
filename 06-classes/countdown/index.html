@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classe</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+
+        background: #881088;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .countdown {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 0 auto;
+      }
+
+      .countdown .count {
+        width: 25%;
+        background: #fff;
+        text-align: center;
+
+        margin-right: 1rem;
+
+        border-radius: 0.25rem;
+        cursor: pointer;
+
+        font-family: Poppins;
+      }
+    </style>
   </head>
   <body>
+    <div class="countdown">
+      <div class="count">
+        <h1 class="days"></h1>
+      </div>
+      <div class="count">
+        <h1 class="hours"></h1>
+      </div>
+      <div class="count">
+        <h1 class="minutes"></h1>
+      </div>
+      <div class="count">
+        <h1 class="seconds"></h1>
+      </div>
+    </div>
     <script type="module" src="script.js"></script>
   </body>
 </html>
