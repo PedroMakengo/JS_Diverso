@@ -1,7 +1,7 @@
 import Countdown from "./countdown.js";
 
 // const diasParaONatal = new Countdown("25 December 2021 23:59:59");
-const tempoParaAnoNovo = new Countdown("31 December 2021 23:59:59");
+const tempoParaAnoNovo = new Countdown("14 December 2021 10:59:59");
 
 const days = document.querySelector(".days");
 const hours = document.querySelector(".hours");
