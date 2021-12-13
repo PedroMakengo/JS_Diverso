@@ -7,10 +7,27 @@
     <title>Validar CPF</title>
   </head>
   <body>
+    <style>
+      label {
+        display: block;
+        font-family: Poppins;
+        font-weight: bold;
+        margin: 10px 0 5px 0;
+      }
+      input {
+        width: 100%;
+        padding: 5px;
+        border: 2px solid black;
+        font-size: 1em;
+        box-sizing: border-box;
+      }
+    </style>
     <form action="">
       <label for="">CPF</label>
       <input type="text" name="cpf" id="cpf" placeholder="•••.•••.•••.••" />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
     </form>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
