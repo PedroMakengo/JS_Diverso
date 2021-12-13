@@ -1,74 +1,25 @@
-// const regexp = /\d{5}[-\s]?\d{3}/;
+// const regexp = /\w+/gi;
 
-// const text = `
-//       00000-000
-//       00000 000
-//       00000000
-//   `;
+// const regexp1 = new RegExp("\\d", "gi");
 
-// const resultado = text.replace(regexp, "");
+// const frase = "JavaScript Linguagem 101";
 
-// CPFs
-// const regexp = /(?:\d{3}[.-]?){3}\d{2}/g;
+// console.log(frase.replace(regexp1, "X"));
 
-// const text = `
-//       000.000.000-00
-//       000-000-000-00
-//       000.000.000.00
-//       0000000000-00
-//       00000000000
+// const regexp = /java/gi;
 
-// `;
+// const frase = "JavaScript e Java Linguagem 101, Java";
 
-// console.log(resultado);
+// let i = 1;
+// while (regexp.test(frase)) {
+//   console.log(i++, regexp.lastIndex);
+// }
 
-// const regexp = /\d{2}[-.]?(?:\d{3}[-.]?){2}\/?\d{4}[-.]?\d{2}/g;
+const frase = "JavaScript, TypeScript, CoffeeScript, Java";
 
-// const text = `
-//      00.000.000/0000-00
-//      00000000000000
-//      00-000-000-0000-00
-//      00.000.000/000000
-//      00.000.000.000000
-//      00.000.000.0000.00
-// `;
+const regexp = /\w+/g;
 
-// const regexpTelefone = /(?:\+?55\s?)?(?:\(?\d{2}\)?[\s-]?)?\d{4,5}[-\s]?\d{4}/g;
-
-// const telefones = `
-//     +55 11 98888-8888
-//     +55 11 98888 8888
-//     +55 11 988888888
-//     +55 11988888888
-//     +5511988888888
-//     5511988888888
-//     11 98888-8888
-//     11 98888 8888
-//     (11) 98888 8888
-//     (11) 98888-8888
-//     11-98888-8888
-//     11 98888 8888
-//     11988888888
-//     11988888888
-//     (11)988888888
-//     98888 8888
-//     8888 8888
-// `;
-
-// const resultado = telefones.replace(regexpTelefone, "");
-
-const regexpEmail = /[\w.-]+@[\w-]+\.[\w.-]+/gi;
-
-const emails = `
-    email@email.com
-    email@email.com.org
-    email-email@email.com 
-    email_email@email.com
-    email.email123@email.com.br
-    email.email23@empresa-sua.com.br
-    c@contato.cc
-`;
-
-const resultado = emails.replace(regexpEmail, "");
-
-console.log(resultado);
+let regexpResult;
+while ((regexpResult = regexp.exec(frase)) !== null) {
+  console.log(regexpResult[0]);
+}
