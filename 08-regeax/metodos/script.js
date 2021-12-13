@@ -22,7 +22,7 @@
 
 // console.log(resultado);
 
-const regexp = /\d/;
+const regexp = /\d{2}[-.]?(?:\d{3}[-.]?){2}\/?\d{4}[-.]?\d{2}/;
 
 const text = `
      00.000.000/0000-00
