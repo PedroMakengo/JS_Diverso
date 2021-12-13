@@ -1,13 +1,5 @@
-function contagem() {
-  let total = 0;
-  return function incremento() {
-    total++;
-    console.log(total);
-  };
-}
+const regexp = /[-.]/g;
 
-const ativarIncremento = contagem();
+const resultado = "111.222.333-44".replace(regexp, "");
 
-setInterval(() => {
-  ativarIncremento();
-}, 1000);
+console.log(resultado);
