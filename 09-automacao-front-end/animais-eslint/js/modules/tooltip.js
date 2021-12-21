@@ -16,7 +16,6 @@ export default function initTooltip() {
     },
   };
 
-
   function criarTooltipBox(element) {
     const tooltipBox = document.createElement('div');
     const text = element.getAttribute('aria-label');
