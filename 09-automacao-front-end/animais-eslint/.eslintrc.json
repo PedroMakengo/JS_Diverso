@@ -4,6 +4,7 @@
     "browser": true
   },
   "rules": {
+    "no-console": 0,
     "no-param-reassign": 0,
     "import/extensions": 0
   }
