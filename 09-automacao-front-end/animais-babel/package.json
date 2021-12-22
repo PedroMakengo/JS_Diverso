@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "webpack --mode production js/script.js --ot ./main",
-    "dev": "webpack --mode development --watch ./js/script.js -o ./main"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "whatwg-fetch": "^3.6.2"
   }
 }
