@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "webpack --mode production js/script.js --output ./main.js",
-    "dev": "webpack --mode development --watch js/script.js --output-path ./main.js"
-    
+    "dev": "webpack --mode development --watch ./js/script.js --output main.js"
   },
   "keywords": [],
   "author": "",
